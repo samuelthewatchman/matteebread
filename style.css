@@ -385,6 +385,15 @@ footer .tagline {
     padding: 20px;
   }
 
+  @media (max-width: 600px) {
+  header {
+    grid-template-columns: 1fr;   /* was flex-direction: column — grid needs this instead */
+    grid-template-rows: auto auto auto;
+    justify-items: center;
+    gap: 16px;
+    padding: 20px;
+  }
+
   header nav {
     justify-content: center;
     flex-wrap: wrap;
