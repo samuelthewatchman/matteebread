@@ -64,10 +64,33 @@ header nav {
 }
 
 header nav a {
-  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background-color: rgba(217, 151, 44, 0.15);
+  border: 1px solid var(--gold);
   color: var(--cream-white);
   text-decoration: none;
   font-weight: bold;
+  font-size: 14px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+header nav a::before {
+  content: "♡";
+  color: var(--gold);
+  font-size: 12px;
+}
+
+header nav a:hover {
+  background-color: var(--gold);
+  color: var(--brown-dark);
+}
+
+header nav a:hover::before {
+  color: var(--brown-dark);
 }
 
 #cart-btn {
