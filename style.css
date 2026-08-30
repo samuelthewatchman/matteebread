@@ -378,15 +378,17 @@ footer .tagline {
 
 @media (max-width: 600px) {
   header {
-    flex-direction: column;
+    grid-template-columns: 1fr;   /* was flex-direction: column — grid needs this instead */
+    grid-template-rows: auto auto auto;
+    justify-items: center;
     gap: 16px;
     padding: 20px;
   }
 
   header nav {
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;              /* tighter than desktop's 48px */
+    flex-wrap: wrap;
+    gap: 20px;
   }
 
   #hero h1 {
@@ -401,6 +403,7 @@ footer .tagline {
     width: 100%;
     right: -100%;
   }
+}
 }
 #close-cart {
   position: absolute;
