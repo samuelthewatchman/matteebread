@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mattee Bread | Baked with Love — Order Fresh Bread Online</title>
+  <meta name="description" content="Fresh Butter, Tea, and Wheat bread baked daily in Ejisu Besease. Order online for pickup or delivery, or bulk order for schools, offices, and events.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#2B1810">
+
+  <!-- Open Graph: controls how the link looks when shared on WhatsApp/Facebook -->
+  <meta property="og:title" content="Mattee Bread | Baked with Love">
+  <meta property="og:description" content="Fresh bread baked daily in Ejisu Besease. Order online for pickup or delivery.">
+  <meta property="og:image" content="assets/flyer.jpg">
+  <meta property="og:type" content="website">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+<header id="top">
+<div class="logo">
+  <svg width="34" height="34" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <!-- heart outline -->
+    <path d="M50 85 C20 65, 5 45, 5 28 C5 12, 20 5, 32 12 C40 16, 46 24, 50 30
+             C54 24, 60 16, 68 12 C80 5, 95 12, 95 28 C95 45, 80 65, 50 85 Z"
+          fill="none" stroke="#D9972C" stroke-width="6" stroke-linejoin="round"/>
+    <!-- loaf inside -->
+    <path d="M30 55 Q30 40, 50 40 Q70 40, 70 55 Q70 65, 50 65 Q30 65, 30 55 Z"
+          fill="#F0B85C" stroke="#2B1810" stroke-width="2"/>
+    <!-- cut lines on the loaf -->
+    <line x1="40" y1="42" x2="36" y2="63" stroke="#2B1810" stroke-width="1.5"/>
+    <line x1="50" y1="41" x2="50" y2="64" stroke="#2B1810" stroke-width="1.5"/>
+    <line x1="60" y1="42" x2="64" y2="63" stroke="#2B1810" stroke-width="1.5"/>
+  </svg>
+  <span>Mattee Bread</span>
+</div>
+  
+  <nav>
+    <a href="#" onclick="scrollToTop(event)">Home</a>    
+    <a href="#products">Menu</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button id="cart-btn">Cart (<span id="cart-count">0</span>)</button>
+</header>
+
+  <!-- HERO -->
+  <section id="hero">
+    <h1>Mattee Bread</h1>
+    <p class="tagline">Baked with love ♡</p>
+    <p class="subtext">We bake more than bread — we bake love, freshness, and goodness in every loaf.</p>
+    <a href="#products"><button class="btn-primary">Order Now</button></a>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products">
+    <h2>Our Products</h2>
+    <div id="product-list">
+      <!-- Butter Bread, Tea Bread, Wheat Bread cards go here in step 3 -->
+    </div>
+  </section>
+
+  <!-- WHAT WE OFFER (straight from the flyer) -->
+  <section id="offers">
+    <h2>We Offer</h2>
+    <div class="offer-grid">
+      <div class="offer-card">
+        <h3>Delivery Service</h3>
+        <p>We deliver to your doorstep</p>
+      </div>
+      <div class="offer-card">
+        <h3>Walk-In Service</h3>
+        <p>Visit us for warm, fresh bread</p>
+      </div>
+      <div class="offer-card">
+        <h3>Bulk Purchases</h3>
+        <p>Perfect for schools, offices & businesses</p>
+      </div>
+      <div class="offer-card">
+        <h3>Event Catering</h3>
+        <p>We cater for all kinds of events & occasions</p>
+      </div>
+    </div>
+  </section>
+
+    <!-- FLYER -->
+  <section id="flyer">
+    <h2>FRESH BREAD EVERY DAY</h2>
+    <img src="assets/flyer.jpg" alt="Mattee Bread flyer" id="flyer-img">
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works">
+    <h2>How It Works</h2>
+    <ol>
+      <li>Choose your bread & quantity</li>
+      <li>Pick delivery or pickup</li>
+      <li>Pay online or order via WhatsApp</li>
+    </ol>
+  </section>
+
+  <!-- CART DRAWER (built out in step 4) -->
+    <aside id="cart-drawer">
+    <button id="close-cart">✕</button>
+    <h2>Your Cart</h2>
+    <div id="cart-items"></div>
+    <p>Total: GHS <span id="cart-total">0</span></p>
+
+    <form id="checkout-form">
+      <h3>Your Details</h3>
+
+      <input type="text" id="cust-name" placeholder="Full name" required>
+      <input type="tel" id="cust-phone" placeholder="Phone number" required>
+      <p class="field-error" id="phone-error"></p>
+      <input type="email" id="cust-email" placeholder="Email" required>
+      <p class="field-error" id="email-error"></p>
+
+      <div class="delivery-options">
+        <label>
+        <input type="radio" name="delivery" value="pickup" checked>
+            Pickup — Ejisu Besease
+        </label>
+        <label>
+            <input type="radio" name="delivery" value="delivery">
+            Delivery
+        </label>
+</div>
+
+<p id="delivery-note" style="display:none;">
+  Delivery fee depends on your location and isn't included in this payment —
+  we'll confirm it with you on WhatsApp before dispatch.
+</p>
+
+      <textarea id="delivery-address" placeholder="Delivery address" style="display:none;"></textarea>
+
+      <textarea id="order-notes" placeholder="Order notes (optional)"></textarea>
+
+      <button type="submit" class="btn-primary" id="checkout-btn">Checkout</button>
+    </form>
+  </aside>
+
+  <!-- FOOTER -->
+  <footer id="contact">
+    <p>📞 Call / WhatsApp: 0246756119/0542791660</p>
+    <p>📍 Location: Ejisu Besease</p>
+    <p class="tagline">Good Bread. Good People. Great Moments. ♡</p>
+  </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script src="script.js"></script>
+
+  <!-- ORDER CONFIRMATION MODAL -->
+  <div id="confirmation-overlay">
+    <div id="confirmation-box">
+      <div class="confirmation-icon">✓</div>
+      <h2>Order Received!</h2>
+      <p id="confirmation-message"></p>
+      <p class="confirmation-ref">Reference: <span id="confirmation-ref-number"></span></p>
+      <button class="btn-primary" onclick="closeConfirmation()">Done</button>
+    </div>
+  </div>
+
+  <!-- WHATSAPP FLOATING BUTTON -->
+
+  <a href="https://wa.me/233542791660?text=Hi%20Mattee%20Bread%2C%20I'd%20like%20to%20order%20some%20bread!"
+  target="_blank"
+  id="whatsapp-btn"
+  aria-label="Chat on WhatsApp">
+  💬
+</a>
+</body>
+</html>
