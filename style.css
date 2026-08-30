@@ -378,15 +378,19 @@ footer .tagline {
 
 @media (max-width: 600px) {
   header {
+    display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 16px;
     padding: 20px;
   }
 
   header nav {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 8px;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;              /* tighter than desktop's 48px */
   }
 
   #hero h1 {
