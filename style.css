@@ -1,0 +1,608 @@
+/* ============================
+   MATTEE BREAD — BASE STYLES
+   ============================ */
+
+:root {
+  /* Colors pulled from the flyer */
+  --brown-dark: #2B1810;     /* headings, dark backgrounds */
+  --brown-mid: #4A2C1A;      /* secondary text on light bg */
+  --gold: #D9972C;           /* accent, buttons, icons */
+  --gold-light: #F0B85C;     /* hover states, highlights */
+  --cream: #FBF1DE;          /* page background */
+  --cream-white: #FFF9EF;    /* card backgrounds */
+
+  --font-heading: 'Georgia', serif;   /* placeholder until we pick a real font */
+  --font-body: Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--cream);
+  color: var(--brown-dark);
+  line-height: 1.5;
+}
+
+/* ============================
+   HEADER
+   ============================ */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;   /* left | center | right, sides forced equal */
+  align-items: center;
+  padding: 28px 32px;
+  background-color: var(--brown-dark);
+  border-bottom: 2px solid var(--gold);
+}
+
+header .logo {
+  justify-self: start;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--cream-white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+header nav {
+  justify-self: center;
+  display: flex;
+  gap: 48px;
+}
+
+header nav a {
+  margin: 0;
+  color: var(--cream-white);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#cart-btn {
+  justify-self: end;
+  background-color: var(--gold);
+  color: var(--cream-white);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#cart-btn:hover {
+  background-color: var(--gold-light);
+}
+/* ============================
+   HERO
+   ============================ */
+
+#hero {
+  text-align: center;
+  padding: 56px 24px;
+  background-color: var(--cream);
+}
+
+#hero h1 {
+  font-family: var(--font-heading);
+  font-size: 48px;
+  color: var(--brown-dark);
+  margin-bottom: 8px;
+}
+
+#hero .tagline {
+  font-size: 22px;
+  font-style: italic;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+
+#hero .subtext {
+  max-width: 480px;
+  margin: 0 auto 24px auto;
+  color: var(--brown-mid);
+  font-size: 16px;
+}
+
+.btn-primary {
+  background-color: var(--brown-dark);
+  color: var(--cream-white);
+  border: none;
+  padding: 14px 32px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: var(--gold);
+}
+/* ============================
+   PRODUCTS
+   ============================ */
+
+#products {
+  padding: 48px 24px;
+  text-align: center;
+}
+
+#products h2 {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  color: var(--brown-dark);
+  margin-bottom: 24px;
+}
+
+#product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background-color: var(--cream-white);
+  border: 1px solid var(--gold-light);
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.product-card .product-info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-card h3 {
+  font-size: 20px;
+  color: var(--brown-dark);
+  margin-bottom: 4px;
+}
+
+.product-card .price {
+  color: var(--gold);
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.product-card .qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.product-card .qty-controls button {
+  background-color: var(--cream);
+  border: 1px solid var(--gold-light);
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.product-card .add-to-cart-btn {
+  margin-top: auto;
+  background-color: var(--gold);
+  color: var(--cream-white);
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.product-card .add-to-cart-btn:hover {
+  background-color: var(--brown-dark);
+}
+
+/* ============================
+   WE OFFER
+   ============================ */
+
+#offers {
+  padding: 48px 24px;
+  background-color: var(--brown-dark);
+  text-align: center;
+}
+
+#offers h2 {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  color: var(--cream-white);
+  margin-bottom: 24px;
+}
+
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.offer-card {
+  background-color: var(--brown-mid);
+  padding: 24px 16px;
+  border-radius: 8px;
+}
+
+.offer-card h3 {
+  color: var(--gold-light);
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.offer-card p {
+  color: var(--cream-white);
+  font-size: 14px;
+}
+
+/* ============================
+   HOW IT WORKS
+   ============================ */
+
+#how-it-works {
+  padding: 48px 24px;
+  text-align: center;
+}
+
+#how-it-works h2 {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+#how-it-works ol {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  max-width: 720px;
+  margin: 0 auto;
+  counter-reset: step;
+}
+
+#how-it-works li {
+  counter-increment: step;
+  background-color: var(--cream-white);
+  border: 1px solid var(--gold-light);
+  border-radius: 8px;
+  padding: 20px;
+  width: 200px;
+  position: relative;
+  font-weight: bold;
+  color: var(--brown-mid);
+}
+
+#how-it-works li::before {
+  content: counter(step);
+  display: block;
+  background-color: var(--gold);
+  color: var(--cream-white);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  line-height: 28px;
+  margin: 0 auto 12px auto;
+  font-size: 14px;
+}
+
+/* ============================
+   CART DRAWER
+   ============================ */
+
+#cart-drawer {
+  position: fixed;
+  top: 0;
+  right: -360px;      /* hidden off-screen by default */
+  width: 320px;
+  height: 100%;
+  background-color: var(--cream-white);
+  box-shadow: -2px 0 12px rgba(0,0,0,0.15);
+  padding: 24px;
+  transition: right 0.3s ease;
+  overflow-y: auto;
+  z-index: 300;
+}
+
+#cart-drawer.open {
+  right: 0;            /* JS will toggle this class in step 4 */
+}
+
+#cart-drawer h2 {
+  font-family: var(--font-heading);
+  margin-bottom: 16px;
+}
+
+#cart-items {
+  margin-bottom: 16px;
+}
+
+#cart-drawer p {
+  font-weight: bold;
+  border-top: 1px solid var(--gold-light);
+  padding-top: 12px;
+}
+
+/* ============================
+   FOOTER
+   ============================ */
+
+footer {
+  background-color: var(--brown-dark);
+  color: var(--cream-white);
+  text-align: center;
+  padding: 20px 24px;      /* was 32px 24px — shorter now */
+}
+
+footer p {
+  margin-bottom: 4px;      /* was 8px — tightens the stacked lines */
+}
+
+footer .tagline {
+  font-style: italic;
+  color: var(--gold-light);
+  margin-top: 8px;         /* was 16px */
+}
+
+/* ============================
+   RESPONSIVE
+   ============================ */
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  header nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;              /* tighter than desktop's 48px */
+  }
+
+  #hero h1 {
+    font-size: 32px;
+  }
+
+  #hero .tagline {
+    font-size: 18px;
+  }
+
+  #cart-drawer {
+    width: 100%;
+    right: -100%;
+  }
+}
+#close-cart {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: var(--brown-mid);
+}
+
+#cart-drawer {
+  position: fixed; /* already set above, just noting it's required for #close-cart to position correctly */
+}
+
+.cart-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--gold-light);
+  font-size: 14px;
+}
+
+.cart-line .remove-btn {
+  background: none;
+  border: none;
+  color: var(--gold);
+  cursor: pointer;
+  font-size: 13px;
+  text-decoration: underline;
+}
+/* ============================
+   FLYER
+   ============================ */
+
+#flyer {
+  padding: 48px 24px;
+  text-align: center;
+}
+
+#flyer h2 {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  color: var(--brown-dark);
+  margin-bottom: 24px;
+}
+
+#flyer-img {
+  max-width: 480px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+html {
+  scroll-behavior: smooth;
+}
+section, #top {
+  scroll-margin-top: 80px;   /* roughly the header's height */
+}
+/* ============================
+   CHECKOUT FORM
+   ============================ */
+
+#checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#checkout-form h3 {
+  font-family: var(--font-heading);
+  color: var(--brown-dark);
+}
+
+#checkout-form input,
+#checkout-form textarea {
+  padding: 10px;
+  border: 1px solid var(--gold-light);
+  border-radius: 6px;
+  font-family: var(--font-body);
+  font-size: 14px;
+}
+
+.delivery-options {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--brown-mid);
+}
+
+#checkout-btn {
+  width: 100%;
+  margin-top: 8px;
+}
+/* ============================
+   WHATSAPP BUTTON
+   ============================ */
+
+#whatsapp-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  background-color: #25D366;   /* WhatsApp's own brand green */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  z-index: 250;   /* above header (200), below cart drawer (300) */
+}
+
+#whatsapp-btn:hover {
+  background-color: #1EBE5D;
+}
+/* ============================
+   ORDER CONFIRMATION MODAL
+   ============================ */
+
+#confirmation-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(43, 24, 16, 0.7);
+  z-index: 400;
+  align-items: center;
+  justify-content: center;
+}
+
+#confirmation-overlay.open {
+  display: flex;
+}
+
+#confirmation-box {
+  background-color: var(--cream-white);
+  border-radius: 12px;
+  padding: 40px 32px;
+  max-width: 360px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+
+.confirmation-icon {
+  width: 56px;
+  height: 56px;
+  background-color: var(--gold);
+  color: var(--cream-white);
+  border-radius: 50%;
+  font-size: 28px;
+  line-height: 56px;
+  margin: 0 auto 16px auto;
+}
+
+#confirmation-box h2 {
+  font-family: var(--font-heading);
+  color: var(--brown-dark);
+  margin-bottom: 12px;
+}
+
+#confirmation-message {
+  color: var(--brown-mid);
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+.confirmation-ref {
+  font-size: 13px;
+  color: var(--brown-mid);
+  margin-bottom: 20px;
+}
+
+.confirmation-ref span {
+  font-weight: bold;
+  color: var(--gold);
+}
+/* ============================
+   FORM VALIDATION MESSAGES
+   ============================ */
+
+.field-error {
+  color: #B3261E;
+  font-size: 12px;
+  margin-top: -6px;   /* pulls it snug under the input above it */
+  display: none;
+}
+
+.field-error.show {
+  display: block;
+}
+
+input.invalid {
+  border-color: #B3261E;
+}
