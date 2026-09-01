@@ -627,3 +627,27 @@ section, #top {
 input.invalid {
   border-color: #B3261E;
 }
+#close-cart {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cream);
+  border: 1px solid var(--gold-light);
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--brown-dark);
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+#close-cart:hover {
+  background-color: var(--gold);
+  color: var(--cream-white);
+  transform: scale(1.08);
+}
