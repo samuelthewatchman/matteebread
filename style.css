@@ -344,15 +344,17 @@ header nav a:hover::before {
 #cart-drawer {
   position: fixed;
   top: 0;
-  right: -360px;      /* hidden off-screen by default */
+  right: -360px;
   width: 320px;
   height: 100%;
   background-color: var(--cream-white);
-  box-shadow: -2px 0 12px rgba(0,0,0,0.15);
-  padding: 24px;
-  transition: right 0.3s ease;
+  box-shadow: -4px 0 24px rgba(0,0,0,0.18);
+  padding: 28px 24px;
+  transition: right 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
   overflow-y: auto;
   z-index: 300;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
 }
 
 #cart-drawer.open {
