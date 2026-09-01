@@ -1,0 +1,29 @@
+{
+  "name": "Mattee Bread",
+  "short_name": "Mattee Bread",
+  "description": "Fresh bread baked daily in Ejisu Besease — order online for pickup or delivery.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FBF1DE",
+  "theme_color": "#2B1810",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
