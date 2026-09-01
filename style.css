@@ -430,9 +430,10 @@ footer .tagline {
   }
 
   #cart-drawer {
-    width: 100%;
-    right: -100%;
-  }
+  width: 85%;
+  max-width: 340px;
+  right: -100%;
+}
 }
 
 .cart-line {
