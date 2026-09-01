@@ -6,19 +6,19 @@ const products = [
   {
     id: "butter",
     name: "Butter Bread",
-    price: 20,
+    price: 10,
     image: "assets/sliced-bread.jpg"
   },
   {
     id: "tea",
     name: "Tea Bread",
-    price: 18,
+    price: 10,
     image: "assets/round-loaves.jpg"
   },
   {
     id: "wheat",
     name: "Wheat Bread",
-    price: 25,
+    price: 10,
     image: "assets/seeded-rolls.jpg"
   }
 ];
