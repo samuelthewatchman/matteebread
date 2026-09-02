@@ -121,6 +121,7 @@ renderProducts();
 renderCart();
 updateCartCount();
 emailjs.init(CONFIG.emailjsPublicKey);
+initWelcomeModal();   // ← added
 
 
 /* ============================
@@ -415,3 +416,33 @@ function loadCartFromStorage() {
     }
   }
 }
+/* ============================
+   WELCOME MODAL (once per day)
+   ============================ */
+
+function initWelcomeModal() {
+  const lastShown = localStorage.getItem("matteeWelcomeShown");
+  const today = new Date().toDateString();
+
+  if (lastShown === today) {
+    return; // already greeted them today, skip
+  }
+
+  setTimeout(() => {
+    document.getElementById("welcome-overlay").classList.add("open");
+  }, 600); // small delay so it doesn't feel like a jarring instant popup
+
+  localStorage.setItem("matteeWelcomeShown", today);
+}
+
+function closeWelcomeModal() {
+  document.getElementById("welcome-overlay").classList.remove("open");
+}
+
+document.getElementById("close-welcome").addEventListener("click", closeWelcomeModal);
+document.getElementById("welcome-dismiss-btn").addEventListener("click", closeWelcomeModal);
+
+document.getElementById("welcome-order-btn").addEventListener("click", () => {
+  closeWelcomeModal();
+  document.getElementById("products").scrollIntoView({ behavior: "smooth" });
+});
